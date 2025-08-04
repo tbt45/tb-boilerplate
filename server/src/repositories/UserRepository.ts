@@ -5,6 +5,7 @@ export class UserRepository {
   private static users: User[] = [
     {
       id: 1,
+      name: "テストユーザー",
       email: "test@example.com",
       password: "$2b$10$Isl89fOtrJjXH0RB7ZnGNurPT3qTC3/eBCfc2Fk6p9.ccZLarqjfW",
       created_at: new Date(),

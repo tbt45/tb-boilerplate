@@ -31,7 +31,14 @@ export class AuthsController {
         { expiresIn: "1h" }
       );
 
-      res.json({ token });
+      res.json({
+        token,
+        user: {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+        },
+      });
     } catch (err) {
       console.error(err);
       res.status(500).send("サーバーエラーが発生しました");
