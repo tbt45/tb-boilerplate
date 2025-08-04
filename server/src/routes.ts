@@ -1,9 +1,14 @@
-import { Router } from 'express';
+import { Router } from "express";
+// const router = express.Router();
+import { AuthsController } from "./controllers/AuthsController";
 
-const router = Router();
+const router: Router = Router();
 
-router.get('/', (_req, res) => {
-  res.send('Hello from Express + TypeScript!');
+router.post("/login", AuthsController.login);
+
+// 接続テスト用
+router.get("/", (_, res) => {
+  res.send("connected");
 });
 
 export default router;
